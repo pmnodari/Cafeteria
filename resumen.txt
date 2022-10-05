@@ -7,3 +7,5 @@ npm install --save-dev gulp
 Las dependencias puedes ser de desarrollo o de producción. Las dependencias de desarrollo son aquellas que son necesarias para la creacion de la aplicacion, pero no en la produccion. Ejemplo es SASS, lo utilizaremos para el desarrollo de la App, pero no se compilara en el servidor, dado que SASS creara la hoja de estilo que es la necesaria para ello.
 
 4-De la instalacion anterior se crean 2 archivos mas el package-lock.json, y el node_module. Este ultimo posee todos lo paquetes para que funcione gulp, y el package-lock.json lleva el registro de las dependencias instaladas. Por lo general, el node_module se pone el gitignore.
+
+5-Se crea otra carpeta gulpfile.js. Esta carpeta es reconocida por gulp, y va buscar en el las tareas, y de ahi va a empezar a realizar todo lo que se pida a gulp: minificar imagenes, compilar una hoja de estilo, etc
