@@ -1,0 +1,9 @@
+1-Creamos el repositorio en GitHub y se crea la carpeta index, y el primer commit para realizar la primera conexión.
+
+2-Con npm crearemos el package.json. Es un archivo que nos indica la informacion adicinal de nuestro sitio web. Su finalidad es mantener un historial de los paquetes instalados y optimizar la forma en que se generan las dependencias del proyecto y los contenidos de la carpeta node_modules/ .
+
+3-Lo anterior es necesario para instalar las dependencias. 
+npm install --save-dev gulp
+Las dependencias puedes ser de desarrollo o de producción. Las dependencias de desarrollo son aquellas que son necesarias para la creacion de la aplicacion, pero no en la produccion. Ejemplo es SASS, lo utilizaremos para el desarrollo de la App, pero no se compilara en el servidor, dado que SASS creara la hoja de estilo que es la necesaria para ello.
+
+4-De la instalacion anterior se crean 2 archivos mas el package-lock.json, y el node_module. Este ultimo posee todos lo paquetes para que funcione gulp, y el package-lock.json lleva el registro de las dependencias instaladas. Por lo general, el node_module se pone el gitignore.
