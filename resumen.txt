@@ -1,6 +1,6 @@
 1-Creamos el repositorio en GitHub y se crea la carpeta index, y el primer commit para realizar la primera conexión.
 
-2-Con npm crearemos el package.json. Es un archivo que nos indica la informacion adicinal de nuestro sitio web. Su finalidad es mantener un historial de los paquetes instalados y optimizar la forma en que se generan las dependencias del proyecto y los contenidos de la carpeta node_modules/ .
+2-Ejecutamos npm init, y con este se crea el package.json. Es un archivo que nos indica la informacion adicinal de nuestro sitio web. Su finalidad es mantener un historial de los paquetes instalados y optimizar la forma en que se generan las dependencias del proyecto y los contenidos de la carpeta node_modules/ .
 
 3-Lo anterior es necesario para instalar las dependencias. 
 npm install --save-dev gulp
@@ -9,3 +9,25 @@ Las dependencias puedes ser de desarrollo o de producción. Las dependencias de 
 4-De la instalacion anterior se crean 2 archivos mas el package-lock.json, y el node_module. Este ultimo posee todos lo paquetes para que funcione gulp, y el package-lock.json lleva el registro de las dependencias instaladas. Por lo general, el node_module se pone el gitignore.
 
 5-Se crea otra carpeta gulpfile.js. Esta carpeta es reconocida por gulp, y va buscar en el las tareas, y de ahi va a empezar a realizar todo lo que se pida a gulp: minificar imagenes, compilar una hoja de estilo, etc
+
+6-Realizamos un ejemplo para verificar que todo ande bien. 
+Gulp se crea una function y dentro de ella lo que se quiere que haga, a su vez, necesita que se le indique que la tarea finalizo, ello se hace con el callback done().
+Luego para utilizar la tarea creada se usa la palabra exports, seguido del nombre que se quiera, y a ello se le asigna la function anteriormente creada.
+
+7-Compilamos SASS con Gulp.
+Para ello creamo en la raiz la carpeta src, y dentro de ella la carpeta scss. Y dentro de este el archivo app.scss
+Ahora si uno quisiera utilizar el app.scss en el html, no se podria dado que el navegador no entiende scss, sino css.
+Para ello sera necesario dos dependencias a instalar con npm: sass y gulp-sass. La primera es la que entiende toda la tecnologia sass, es decir sus sintaxis, mientras que gulp-sass solo nos conecta con el archivo gulpfile.js.
+
+8-Para que el html entienda o reconozca lo que se hace el archivo app.scss, debemos crear la logica en el archivo gulpfile.js. 
+Ahí creamos la funcion css, y la exportamos. Pero debemos importar gulp y gulp-sass, con la palabra require. Esto es porque en el node-module estan todas la librerias que se necesitan, y debemos traerla i importarla a donde seran utilizadas.
+En gulp aparece los {} porque se traen varias funciones, mientras que en gulp-sass solo se importa sass. Esta dada su ultima actualizacion se agrega require('sass'), para indicar que este es requerido.
+Ya con esto se siguen los pasos del ejemplo, y solo basta compilarlo con gulp css.
+Este crea la carpeta build con el archivo especificado.
+
+9-Con src es el source y donde buscara el archivo a compilar. Luego los pipe para indicar la proxima tarea (analogia del armado de la hamburguesa).
+sass() es la compilacion, el ultimo pipe, para indicar donde se guardara el archivo, para ello se llama a dest(), y se le pasa como argumento la ruta, con el nombre, en donde se gurdara el archivo con la extension css.
+
+10-
+
+ 
