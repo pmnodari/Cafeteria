@@ -7,10 +7,11 @@
 
 exports.tarea=tarea; */
 
-//Importamos gulp y gulp-sass
-const {src, dest}=require('gulp');
+//Importamos dependencias
+const {src, dest, watch}=require('gulp');
 const sass=require('gulp-sass')(require('sass'));
-
+const postcss=require('gulp-postcss');
+const autoprofixer=require('autoprefixer');
 //Compilar SASS
 function css(done) {
     /*  
@@ -20,9 +21,16 @@ function css(done) {
         3-Guardar el css 
     */
     src('src/scss/app.scss')
-        .pipe(sass())
+        .pipe(sass({outputStyle:'compressed'}))
+        .pipe(postcss([autoprofixer()]))
         .pipe(dest('build/css'));
     
     done();
 }
+//Creamos el Watch
+function dev() {
+    watch('src/scss/app.scss',css);
+    
+}
 exports.css=css;
+exports.dev=dev;

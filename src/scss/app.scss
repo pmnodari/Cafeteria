@@ -1,5 +1,10 @@
 $color: red;
+$color1:white;
 
 body{
     background-color: $color;
+    font-size: 4rem;
+}
+h1{
+    color: $color1;
 }

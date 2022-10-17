@@ -28,6 +28,20 @@ Este crea la carpeta build con el archivo especificado.
 9-Con src es el source y donde buscara el archivo a compilar. Luego los pipe para indicar la proxima tarea (analogia del armado de la hamburguesa).
 sass() es la compilacion, el ultimo pipe, para indicar donde se guardara el archivo, para ello se llama a dest(), y se le pasa como argumento la ruta, con el nombre, en donde se gurdara el archivo con la extension css.
 
-10-
+10-Hasta aqui todo funciona pero ante cada cambio en el archivo app.scss debemo volver a compilar gulp: gulp css (en el ejemplo)
+Para solucionar esto crearemos un watch. Esto es cuando se escribe codigo CSS y se quiere que se tomen los cambios. Y gulp ya tiene una API para esto.
+
+11-Al igual que se hizo con la funcion css, lo hacemos con dev, donde se usa un callback: watch() que recibe dos parametros: 1-lo que se estara observando, y que se quiere que haga cuando cambie. En el ejemplo que mire el archivo:'src/scss/app.scss', y que ejecute la funcion 'css'.
+
+12-Dentro del pipe sass(), se puede pasar como argumento un objeto. Y unas de sus propiedades es el outputStyle, que recibe un valor de 'compressed'. Esto permite mimificar la hoja de estilo directamente cuando se compila.
+
+13-Se agregan tres dependencias mas: autoprefixer y gulp-postcss, y postcss. Y luego se importan.
+Luego en package.json se agrega un "browserslist" que son los navegadores que no son compatibles con algunas mejoras de css como flexbox. 
+Estas dependencia haran que nuestros codigo sean de los mas modernos y compatible con todos los navegadores, agregando justamente lo prefijos necesarios para ello. 
+Como recomendacion no es seguro darle soporte a IE (Internet explore). Para ello solo se le dara soporte a las ultimas versiones y los que sea utilizado en un porcentaje mayor al 1%.
+
+14-
+
+
 
  
