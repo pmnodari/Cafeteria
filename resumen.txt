@@ -32,6 +32,7 @@ sass() es la compilacion, el ultimo pipe, para indicar donde se guardara el arch
 Para solucionar esto crearemos un watch. Esto es cuando se escribe codigo CSS y se quiere que se tomen los cambios. Y gulp ya tiene una API para esto.
 
 11-Al igual que se hizo con la funcion css, lo hacemos con dev, donde se usa un callback: watch() que recibe dos parametros: 1-lo que se estara observando, y que se quiere que haga cuando cambie. En el ejemplo que mire el archivo:'src/scss/app.scss', y que ejecute la funcion 'css'.
+Ejecutamos gulp dev
 
 12-Dentro del pipe sass(), se puede pasar como argumento un objeto. Y unas de sus propiedades es el outputStyle, que recibe un valor de 'compressed'. Esto permite mimificar la hoja de estilo directamente cuando se compila.
 
@@ -40,7 +41,43 @@ Luego en package.json se agrega un "browserslist" que son los navegadores que no
 Estas dependencia haran que nuestros codigo sean de los mas modernos y compatible con todos los navegadores, agregando justamente lo prefijos necesarios para ello. 
 Como recomendacion no es seguro darle soporte a IE (Internet explore). Para ello solo se le dara soporte a las ultimas versiones y los que sea utilizado en un porcentaje mayor al 1%.
 
-14-
+14-Tareas por default. Justamente son aquellas tareas que no se especifica. Ya que se ejecuta el comando gulp, a secas.
+Pero igualmente se puede asignar multiples tareas.
+Para el ejemplo se importan series y parellel.
+Ambas son modos en que se inician las tareas, aunque la mas recomendada es series. Y en este caso siempre es mejor dejar las de watch al final, dado que es la que se quedara mirando los cambios e ir aplicandolos.
+
+15-Dividir el codigo SASS en archivos. Ejemplo header.
+El _ significa que este codigo sera incluido en otro archivo. Por lo tanto, no sera compilado directamente como si lo hace app.scss, por medio de app.css.
+Lo que hacemos es llamar en app.scss, con el decorador @use al _header, marcandole la ruta.
+Tener en cuenta que los cambios que se realicen en _header.scss no son escuchados por el watch, este solo escucha el archivo app.scss.
+
+16-Escuchar todos los archivos .scss. Una forma es especificar cada archivo scss, pero en proyectos complejos podria ser muy extenso. Entonces, gulp ofrece lo que se llama comodines. Estos son los **
+Se especifica la ruta hasta la carpeta que contiene todos los .scss ->watch('src/scss/**/*.scss', css);
+Y luego a traves de @use se usa en app.scss.
+Recordar el ; es obligatorio en SASS.
+
+17-Creando Variables en SASS. Limpiamos todo lo hecho hasta ahora.
+
+18-Se crea la carpeta base. Y dentro de ella los archivos _variables, _normalize, y _globales.scss.
+
+19-En la carpeta base se agrega el archivo _index.scss, que nos permitira es listar todos los archivos scss que se encuentren en dicha carpeta. Para ello se utiliza @forward-> indica que el archivo se incluya pero no que compile, esta es la diferencia con @use, que si los compila.
+
+20-Entonces, en app.scss al usar @use 'base', este ira a la carpeta base y buscara el _index.scss, compilara todos los archivos ahi incluidos.
+
+21-Importar Variables de Otros archivos. Anteriormente vimos como traer un archivo y compilarlo. Pero ahora debemos usar la variables de esos archivos .scss, como lo es _variables.scss. 
+Usamos @use 'variables', y luego en el elemento html o etiqueta traemos el nombre de la variable precedido del nombre del archivo scss en referencia->variables.$fuente_principal
+Se puede usar una alias con "as".
+
+22-Agregamos codigo a los globales, y a utilidades.
+
+23-Cada vez que se quiera agregar una lista de archivos scss, en la carpeta que los contendra se creara un index.scss. Y en el los @forward de cada archivo scss.
+
+24-
+
+
+
+
+
 
 
 

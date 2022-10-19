@@ -1,10 +1,4 @@
-$color: red;
-$color1:white;
+//Traemos los scss  (@use reemplaza a @import)
+@use 'base';
+@use 'header';
 
-body{
-    background-color: $color;
-    font-size: 4rem;
-}
-h1{
-    color: $color1;
-}
