@@ -72,7 +72,14 @@ Se puede usar una alias con "as".
 
 23-Cada vez que se quiera agregar una lista de archivos scss, en la carpeta que los contendra se creara un index.scss. Y en el los @forward de cada archivo scss.
 
-24-
+24-Iniciamos con el armado de la pagina Cafeteria.
+
+25-header.
+Aqui se inicia los primeros pasos con el html. Este contendra una imagen de fondo, una barra general, compuesta por un logo y una barra de navegacion. Y por ultimo, un texto central.
+
+26-Se configura el cargado o compilado de imagenes. La idea es que gulp cargue las imagenes que solo necesitaremos y con el menor tamaño segun el navegador que soporta.
+
+
 
 
 
