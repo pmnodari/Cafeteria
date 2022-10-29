@@ -79,6 +79,25 @@ Aqui se inicia los primeros pasos con el html. Este contendra una imagen de fond
 
 26-Se configura el cargado o compilado de imagenes. La idea es que gulp cargue las imagenes que solo necesitaremos y con el menor tamaño segun el navegador que soporta.
 
+27-En gulpfile se crea la tarea o funcion imagenes, y se agrega el watch de dicha tarea en el dev. Lo que se hace aqui es que se lleve las imagenes a otro destino, para luego configurar que imagenes se van a cargar, para aligerar la carga de las mismas.
+
+28-Para realizar la tarea de minimizar la imagenes se utiliza una dependencia de gulp: gulp-imagemin que se instala con npm.
+
+29-El orden en las tareas en gulp es de suma importancia. En la funcion imagenes, previamente, buscaba las imagenes y las guardaba. Aplicar luego, el imagemin seria tarde, la idea es guardar las imagenes ya minificadas. 
+imagemin es una funcion y recibe un objeto. El cual tiene una propiedad que se llama 'optimizationLevel'.
+Tener en cuenta que a la fecha esta dependencia esta sin soporte. Y se instala una version anterior npm i -D gulp-imagemin@7.1.0.
+
+30-Crear imagenes Webp con Gulp. Gulp permite, no solo compilar codigo SASS, sino muchas funciones mas como convertir cientos de imagenes en formato webp, que son mas ligeras. Recordar instalar la dependencia webp como desarrollo.
+
+31-Crear imagenes Avif con Gulp. Lo mismo que el anterior pero en formato avif. Aunque este formato solo es soportado por Chrome, pero este navegador es utilizado por el 80%.
+
+Cabe aclarar que con respecto a las vulnerabilidades al instalar un paquete con npm no hay que darle importancia dado que el node_module no se subira al sitio, solo es para el desarrollo, no asi la produccion.
+
+Tanto para la convercion de las imagenes a Webp y a Avif. Se puede utilizar como opcion una variable objeto con la propiedad quelity:50 para optimizar mas las imagenes.
+
+
+
+
 
 
 
