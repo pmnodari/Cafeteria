@@ -95,6 +95,15 @@ Cabe aclarar que con respecto a las vulnerabilidades al instalar un paquete con 
 
 Tanto para la convercion de las imagenes a Webp y a Avif. Se puede utilizar como opcion una variable objeto con la propiedad quelity:50 para optimizar mas las imagenes.
 
+32-Iniciamos el maquetado del HEADER.
+Agregamos el logo, y empezamos con el codigo css de la seccion header. REcordemos que tenemos las carpeta de cada seccion: _header.scss.
+(NO OLVIDAR correr GULP para ver los cambios)
+
+33-La anidacion con SASS es colocando dentro de la clase padre o contenedor, las clases hijas o etiquetas, es decir, al especificar una clase, y dentro de las llaves de esa, se coloca otra clase, asi se ira anidando en SASS y al compilar, se mostrara como la anidacion que se ve en CSS tradicional. Como recomendacion no mas de tres selectores.
+
+34-Para acceder a los pseudoelementos se debe usar el simbolo & (&::before o &:hover). Este le indica a SASS que el pseudoelemento afecta a la etiqueta. Caso, contrario aparece un espacio en la compilacion, y se interpreta como si fuera una clase mas.
+
+35-
 
 
 
