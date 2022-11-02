@@ -103,7 +103,18 @@ Agregamos el logo, y empezamos con el codigo css de la seccion header. REcordemo
 
 34-Para acceder a los pseudoelementos se debe usar el simbolo & (&::before o &:hover). Este le indica a SASS que el pseudoelemento afecta a la etiqueta. Caso, contrario aparece un espacio en la compilacion, y se interpreta como si fuera una clase mas.
 
-35-
+35-Mixin en SASS
+Un mixin es un conjunto coherente de métodos y propiedades implementadas por otras interfaces y clases. La forma más común de llamar a un mixin y aplicar esas propiedades y métodos es el include (ejemplo @include nombre_del_mixin )
+(@mixin bgColor($color){
+    background-color:$color;
+})
+
+36-Se crean mixin para los Media queries, y un shorthand
+
+37-Se crea el archivo barra.scss. Y lo que se hace es trabajar por componente. Primero se trabajo la estructura del header, luego la barra, que incluye el logo y la navegacion, posterior se le da estilo a la navegacion.
+
+
+
 
 
 

@@ -1,0 +1,20 @@
+@use 'variables' as v;
+
+//Mixin para Media Queries
+
+@mixin telefono {
+    @media(min-width: v.$telefono){
+        @content;
+        /* Con esta directiva le decimos que todo lo que se incluya en las llaves, donde se incluya las propiedades CSS, es parte del media queries */
+    }
+}
+@mixin tablet {
+    @media(min-width: v.$tablet){
+        @content;
+    }
+}
+@mixin desktop{
+    @media (min-width:v.$desktop) {
+        @content;
+    }
+}
